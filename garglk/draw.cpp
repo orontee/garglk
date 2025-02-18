@@ -478,7 +478,7 @@ void gli_initialize_fonts()
     auto faces = {FontFace::propr(), FontFace::propi(), FontFace::propb(), FontFace::propz(),
                   FontFace::monor(), FontFace::monoi(), FontFace::monob(), FontFace::monoz()};
     for (const auto &fontface : faces) {
-        glyph_substitution_fonts.insert({fontface, make_substitution_fonts(fontface)});
+        glyph_substitution_fonts.insert(std::make_pair(fontface, make_substitution_fonts(fontface)));
     }
 
     // create oblique transform matrix
